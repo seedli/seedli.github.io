@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Page Title</title>
+<script>
+
+$( document ).ready(function() {
+    //$.get("http://www.filco.com.tw/shopProdDetail.asp?id=98", function(response) {
+    //alert("Filco instock status: " + $(response).find("#main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)").text());
+	//});
+	
+	var myUrl = 'http://www.filco.com.tw/shopProdDetail.asp';
+
+	var proxy = 'https://cors-anywhere.herokuapp.com/';
+
+	var finalURL = proxy + myUrl;
+	
+	var id;
+	
+	$( "#success" ).hide();
+	
+	id="?id=98";
+	$( "#success" ).load(
+		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)"
+		,
+		function(){
+			$( "#stock98" ).append($( "#success" ).find("div").text());
+		}
+	);
+	
+	id="?id=67";
+	$( "#success" ).load(
+		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)"
+		,
+		function(){
+			$( "#stock67" ).append($( "#success" ).find("div").text());
+		}
+	);
+	
+	id="?id=75";
+	$( "#success" ).load(
+		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)"
+		,
+		function(){
+			$("#stock75 > a").attr('href', myUrl + id);
+			$( "#stock75" ).append($( "#success" ).find("div").text());
+		}
+	);
+	
+	
+});
+
+</script>
+</head>
+<body>
+
+<div id="stock98">
+	<a href="http://www.filco.com.tw/shopProdDetail.asp?id=98">NINJA 忍者青軸中文版</a>
+</div>
+<div id="stock67">
+	<a href="http://www.filco.com.tw/shopProdDetail.asp?id=67">Majestouch 2 青軸中文版</a>
+</div>
+<div id="stock75">
+	<a>NINJA 忍者Tenkeyless茶軸中文版</a>
+</div>
+
+<div id="success"></div>
+
+
+
+</body>
+</html>

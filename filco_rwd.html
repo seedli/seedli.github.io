@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -19,12 +20,14 @@ function showStock(value){
 	var proxy = 'https://cors-anywhere.herokuapp.com/';
 	var id="?id="+value;
 	
-	var obj = $("<div id='filco"+value+"'>").appendTo($("body > div > header"));
+	var obj = $("<div>").attr("id","filco"+value).prepend("<img src='img/loading.gif'/>").appendTo($("body > div > header"));
+	
 	
 	$( "#success" ).load(
 		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right"
 		,
 		function(){
+			obj.find("img").hide();
 			obj.append(
 					$("<h1>").append(
 						$("<a>").attr('href', myUrl + id).text($("#success > div > h1").text()
@@ -37,21 +40,9 @@ function showStock(value){
 			}else{
 				obj.append( $("<h2>").css("color", "brown").append(status) );
 			}
+			
 		}
 	);
-	
-	
-	/*
-	$.get( 
-		proxy + myUrl + id,
-		function( data ) {
-			//console.log( data );
-			$("#success").html(data);
-			alert( $("#main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)").text() );
-		}
-	);
-	*/
-	
 	
 }
 

@@ -1,5 +1,4 @@
-﻿<!DOCTYPE html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!DOCTYPE html>
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -20,29 +19,39 @@ function showStock(value){
 	var proxy = 'https://cors-anywhere.herokuapp.com/';
 	var id="?id="+value;
 	
-	obj = $("body").append($("<div id='filco'"+value+">"));
+	var obj = $("<div id='filco"+value+"'>").appendTo($("body > div > header"));
 	
 	$( "#success" ).load(
 		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right"
 		,
 		function(){
-		
 			obj.append(
 					$("<h1>").append(
 						$("<a>").attr('href', myUrl + id).text($("#success > div > h1").text()
 					)
 				)
 			);
-			
 			var status = $("#success > div > div:nth-child(5)").text();
 			if(status === "有"){
 				obj.append( $("<h2>").css("color", "blue").append(status) );
 			}else{
 				obj.append( $("<h2>").css("color", "brown").append(status) );
 			}
-			
 		}
 	);
+	
+	
+	/*
+	$.get( 
+		proxy + myUrl + id,
+		function( data ) {
+			//console.log( data );
+			$("#success").html(data);
+			alert( $("#main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)").text() );
+		}
+	);
+	*/
+	
 	
 }
 
@@ -72,9 +81,28 @@ function showStock(value){
 </script>
 </head>
 <title>Filco鍵盤追追追</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing:6px}
+.w3-row-padding img {margin-bottom:12px}
+.w3-row-padding {margin-bottom:128px}
+</style>
 <body>
 
-<div id="success"></div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<header class="w3-panel w3-padding-128 w3-center w3-opacity">
+  <div id="success"></div>
+</header>
+
+<!-- End Page Content -->
+</div>
 
 </body>
 </html>

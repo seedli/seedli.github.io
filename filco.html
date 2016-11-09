@@ -5,67 +5,50 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>Filco鍵盤追追追</title>
 <script>
-
 $( document ).ready(function() {
-    //$.get("http://www.filco.com.tw/shopProdDetail.asp?id=98", function(response) {
-    //alert("Filco instock status: " + $(response).find("#main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)").text());
-	//});
-	
-	var myUrl = 'http://www.filco.com.tw/shopProdDetail.asp';
-
-	var proxy = 'https://cors-anywhere.herokuapp.com/';
-
-	var finalURL = proxy + myUrl;
-	
-	var id;
-	
-	$( "#success" ).hide();
-	
-	id="?id=98";
-	$( "#success" ).load(
-		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)"
-		,
-		function(){
-			$("#stock98 > a").attr('href', myUrl + id);
-			$( "#stock98" ).append($( "#success" ).find("div").text());
-		}
-	);
-	
-	id="?id=67";
-	$( "#success" ).load(
-		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)"
-		,
-		function(){
-			$("#stock67 > a").attr('href', myUrl + id);
-			$( "#stock67" ).append($( "#success" ).find("div").text());
-		}
-	);
-	
-	id="?id=75";
-	$( "#success" ).load(
-		proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)"
-		,
-		function(){
-			$("#stock75 > a").attr('href', myUrl + id);
-			$( "#stock75" ).append($( "#success" ).find("div").text());
-		}
-	);
-	
+    
+	$("#success").hide();
+	$("#stock98").showStock("98");
+	$("#stock67").showStock("67");
+	$("#stock75").showStock("75");
 	
 });
 
+(function( $ ){
+   $.fn.showStock = function(value) {
+		var myUrl = 'http://www.filco.com.tw/shopProdDetail.asp';
+		var proxy = 'https://cors-anywhere.herokuapp.com/';
+	    var id="?id="+value;
+		var obj = this;
+		
+		$( "#success" ).load(
+			proxy + myUrl + id + " #main > div.prodDetailtop > div.txt > div > div.right > div:nth-child(5)"
+			,
+			function(){
+				var status = $( "#success" ).find("div").text();
+				obj.find("h1 > a").attr('href', myUrl + id);
+				
+				if(status === "有"){
+					obj.append( $("<h2>").css("color", "blue").append(status) );
+				}else{
+					obj.append( $("<h2>").css("color", "brown").append(status) );
+				}
+			}
+		);
+   }; 
+})( jQuery );
 </script>
 </head>
 <body>
 
 <div id="stock98">
-	<a>NINJA 忍者青軸中文版</a>
+	<h1><a>NINJA 忍者青軸中文版</a></h1>
 </div>
 <div id="stock67">
-	<a>Majestouch 2 青軸中文版</a>
+	<h1><a>Majestouch 2 青軸中文版</a></h1>
 </div>
 <div id="stock75">
-	<a>NINJA 忍者Tenkeyless茶軸中文版</a>
+	<h1><a>NINJA 忍者Tenkeyless茶軸中文版</a></h1>
 </div>
 
 <div id="success"></div>

@@ -5,41 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> </title>
-    <link href="http://bootswatch.com/lumen/bootstrap.min.css" rel="stylesheet" />
-   <style>
-    </style>
+    <link rel="stylesheet" href="http://bootswatch.com/journal/bootstrap.css" type="text/css" />
 
-  
+   <style>
+
+    p.basics-summary {
+      margin: 15px 0 !important;
+    }
+    p.basics-contact {
+      margin: 0 !important;
+    }
+    h3 {
+      margin-top: 10px !important;
+    }
+    h3.section-heading {
+      color: #ef541d !important;
+    }
+    h4.institution-name {
+        color: #777 !important;
+    }
+    .interest-item {
+      line-height: 26px;
+    }
+    a[href] {
+      /* text-decoration: underline !important; */
+      color: #ef541d !important;
+    }
+
+    @media print {
+      a[href] {
+        text-decoration: underline !important;
+        color: #ef541d !important;
+      }
+      a[href]:after {
+        content: none !important;
+      }
+      p, strong, li, body, .skill {
+        color: #999 !important;
+        font-size: 1.2em;
+        line-height: 1.4em;
+      }
+      .basics-contact {
+        font-size: 1.2em;
+        line-height: 1.4em;
+      }
+      h3.section-heading {
+        font-size: 3em;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        padding-top: 30px;
+      }
+      h4 {
+        font-size: 2em;
+      }
+      h3.education-type {
+        font-size: 1.2em;
+        color: #999 !important;
+        margin-top: 50px;
+        margin-bottom: 8px;
+      }
+      h4.education-area {
+        font-size: 1.5em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      h4.institution-name {
+        font-size: 1.2em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: #999 !important;
+      }
+      hr {
+        display: none;
+        margin: 0px;
+      }
+      h3 {
+        margin-top: 25px;
+      }
+    }
+
+   </style>
+
   </head>
+
   <body>
     <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="row">
-        <div class="col-md-6 col-sm-12">
-        <h1>Shih-Hao Li (李世豪)<h1>
-
-        <h2></h2>
-        </div>
-        <div class="col-md-6 col-sm-12">
-        <img class="media-object img-circle pull-right" data-src="holder.js/64x64" alt="64x64" src="&#x2F;&#x2F;www.gravatar.com&#x2F;avatar&#x2F;081d6bd91487e300eeda8129bc76ecc2?s=100&amp;r=pg&amp;d=mm" style="width: 100px; height: 100px; margin-top: 20px;">
-
+        <div class="col-md-12 col-sm-12">
+          <img class="media-object img-circle pull-right" data-src="holder.js/64x64" alt="64x64" src="" style="width: 100px; height: 100px; margin-top: 5px;">
+	        <h1>Shih-Hao Li (李世豪)<h1>
+	        <h2></h2>
         </div>
         </div>
-      <hr style="color: #ccc; height: 4px;" />
+      <hr />
       <section class="row">
         <header class="col-md-3">
-          <h3>About</h3>
+          <h3 class="section-heading">About</h3>
         </header>
         <div class="col-md-9">
-        <p></p>
-        <strong>Phone:</strong> 0912-810-990 <br />
-        <strong>Email:</strong> seedlix@gmail.com<br />
+        <p class="basics-summary"></p>
+        <p class="basics-contact"><strong>Phone:</strong> 0912-810-990</p>
+        <p class="basics-contact"><strong>Email:</strong> <a href="mailto:seedlix@gmail.com">seedlix@gmail.com</a></p>
+        <br>
+        <hr />
         </div>
       </section>
       <section class="row">
         <header class="col-md-3">
-          <h3>Work Experience</h3>
+          <h3 class="section-heading">Work Experience</h3>
         </header>
         <div class="col-md-9">
           <div class="skills">
@@ -70,37 +145,39 @@
 
       <section class="row">
         <header class="col-md-3">
-          <h3>Education</h3>
+          <h3 class="section-heading">Education</h3>
         </header>
         <div class="col-md-9">
           <div class="skills">
-            <h3>National Cheng Kung University</h3>
-            <h4>Manufacturing Information and Systems, Master</h4>
-            <p>2008 - 2010</p>
-            <p></p>
+            <h3 class="education-type">Master</h3>
+            <h4 class="education-area">Manufacturing Information and Systems</h4>
+            <h4 class="institution-name">National Cheng Kung University</h4>
+            <p>2008-2010</p>
             <ul>
             </ul>
             <hr />
-            <h3>Chung Yuan Christian University</h3>
-            <h4>Industrial engineering, Bachelor</h4>
-            <p>2003 - 2008</p>
-            <p></p>
+            <h3 class="education-type">Bachelor</h3>
+            <h4 class="education-area">Industrial engineering</h4>
+            <h4 class="institution-name">Chung Yuan Christian University</h4>
+            <p>2003-2008</p>
             <ul>
             </ul>
             <hr />
           </div>
         </div>
       </section>
+
+
       <section class="row">
         <header class="col-md-3">
-          <h3>Skills</h3>
+          <h3 class="section-heading">Skills</h3>
         </header>
         <div class="col-md-9">
           <div class="row-fluid skills">
             <ul class="col-md-6">
 
               <li>
-                <h4>Java Development</h4>
+                <h4 class="skill">Java Development</h4>
                 <ul>
                   <li>Spring</li>
                   <li>Hibernate</li>
@@ -111,6 +188,24 @@
           </div>
         </div>
       </section>
+
+      <section class="row">
+        <header class="col-md-3">
+          <h3 class="section-heading">Interests</h3>
+        </header>
+        <div class="col-md-9">
+            <ul>
+              <li class="interest-item">Sports
+                (<a href="Slowpitch Softball">Bowling</a>)
+              </li>
+              <li class="interest-item">Leisure activities
+                (<a href="PC Games">Movies</a>)
+              </li>
+            </ul>
+            <hr />
+        </div>
+      </section>
+
 
     </div>
   </div>

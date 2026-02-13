@@ -1,379 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
-	<title>Shih-Hao (Tom) Li</title>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> </title>
-    <link rel="stylesheet" href="https://bootswatch.com/journal/bootstrap.css" type="text/css" />
-
-   <style>
-
-    p.basics-summary {
-      margin: 15px 0 !important;
-    }
-    p.basics-contact {
-      margin: 0 !important;
-    }
-    h3 {
-      margin-top: 10px !important;
-    }
-    h3.section-heading {
-      color: #ef541d !important;
-    }
-    h4.institution-name {
-        color: #777 !important;
-    }
-    .interest-item {
-      line-height: 26px;
-    }
-    a[href] {
-      /* text-decoration: underline !important; */
-      color: #ef541d !important;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shih-Hao (Tom) Li — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-text: #1a1a1a;
+      --color-text-secondary: #555;
+      --color-text-light: #777;
+      --color-accent: #2563eb;
+      --color-border: #d4d4d4;
+      --color-border-light: #e8e8e8;
+      --color-bg: #fff;
+      --color-bg-page: #f0f0f0;
+      --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'IBM Plex Serif', Georgia, serif;
     }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      line-height: 1.6;
+      background: var(--color-bg-page);
+      padding: 32px 16px;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--color-bg);
+      padding: 56px 64px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06);
+      border-radius: 2px;
+    }
+
+    /* ─── Header ─── */
+    .header {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--color-text);
+    }
+
+    .header h1 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .header h1 .name-zh {
+      font-size: 1.4rem;
+      color: var(--color-text-secondary);
+      margin-left: 8px;
+      font-weight: 400;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      margin-top: 10px;
+      font-size: 0.87rem;
+      color: var(--color-text-secondary);
+    }
+
+    .contact-row a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .contact-row a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-row .sep {
+      color: var(--color-border);
+    }
+
+    /* ─── Sections ─── */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-accent);
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* ─── About ─── */
+    .about p {
+      color: var(--color-text-secondary);
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+
+    /* ─── Experience ─── */
+    .job {
+      margin-bottom: 24px;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-bottom: 6px;
+    }
+
+    .job-desc {
+      font-size: 0.87rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .project {
+      margin-bottom: 14px;
+      padding-left: 0;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .project-meta {
+      font-size: 0.82rem;
+      color: var(--color-text-light);
+      margin-bottom: 4px;
+    }
+
+    .project-meta .tech {
+      background: #f3f4f6;
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      color: var(--color-text-secondary);
+      display: inline-block;
+      margin: 1px 2px 1px 0;
+    }
+
+    .responsibilities {
+      list-style: none;
+      padding: 0;
+    }
+
+    .responsibilities li {
+      font-size: 0.87rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+
+    .responsibilities li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--color-border);
+    }
+
+    /* ─── Education ─── */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    .edu-school {
+      font-size: 0.87rem;
+      color: var(--color-text-secondary);
+    }
+
+    .edu-year {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      white-space: nowrap;
+    }
+
+    /* ─── Skills ─── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 6px 16px;
+      font-size: 0.87rem;
+    }
+
+    .skills-grid dt {
+      color: var(--color-text-light);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .skills-grid dd {
+      color: var(--color-text-secondary);
+    }
+
+    /* ─── Print Button ─── */
+    .print-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 640px) {
+      body { padding: 0; }
+      .page { padding: 32px 24px; border-radius: 0; box-shadow: none; }
+      .header h1 { font-size: 1.6rem; }
+      .header h1 .name-zh { display: block; margin-left: 0; margin-top: 2px; }
+      .job-header { flex-direction: column; }
+      .edu-item { flex-direction: column; }
+      .skills-grid { grid-template-columns: 1fr; gap: 2px 0; }
+      .skills-grid dt { text-align: left; }
+      .contact-row { flex-direction: column; gap: 2px; }
+      .contact-row .sep { display: none; }
+    }
+
+    /* ─── Print ─── */
     @media print {
-      a[href] {
-        text-decoration: underline !important;
-        color: #ef541d !important;
+      html { font-size: 12.5px; }
+      body { background: #fff; padding: 0; }
+      .page {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
       }
-      a[href]:after {
-        content: none !important;
+      .print-btn { display: none; }
+      .section { margin-bottom: 20px; }
+      .job { margin-bottom: 18px; }
+      .header { margin-bottom: 24px; padding-bottom: 18px; }
+      a { color: var(--color-text-secondary) !important; }
+      .section-title { color: var(--color-text) !important; }
+      .project-meta .tech {
+        background: none;
+        padding: 0;
+        border: 1px solid var(--color-border);
       }
-      p, strong, li, body, .skill {
-        color: #999 !important;
-        font-size: 1.2em;
-        line-height: 1.4em;
-      }
-      .basics-contact {
-        font-size: 1.2em;
-        line-height: 1.4em;
-      }
-      h3.section-heading {
-        font-size: 3em;
-        margin-top: 100px;
-        margin-bottom: 20px;
-        padding-top: 30px;
-      }
-      h4 {
-        font-size: 2em;
-      }
-      h3.education-type {
-        font-size: 1.2em;
-        color: #999 !important;
-        margin-top: 50px;
-        margin-bottom: 8px;
-      }
-      h4.education-area {
-        font-size: 1.5em;
-        margin-top: 5px;
-        margin-bottom: 5px;
-      }
-      h4.institution-name {
-        font-size: 1.2em;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        color: #999 !important;
-      }
-      hr {
-        display: none;
-        margin: 0px;
-      }
-      h3 {
-        margin-top: 25px;
+
+      @page {
+        margin: 16mm 14mm;
+        size: A4;
       }
     }
+  </style>
+</head>
+<body>
 
-   </style>
-
-  </head>
-
-  <body>
-    <div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-			<h1>李世豪</h1>
-	        <h1>Shih-Hao (Tom) Li</h1>
-	        <h2></h2>
-        </div>
-        </div>
-      <hr />
-      <section class="row">
-        <div class="col-md-9">
-        <p class="basics-summary"></p>
-        <p class="basics-contact"><strong>Email:</strong> <a href="mailto:seedlix@gmail.com">seedlix@gmail.com</a></p>
-		<p class="basics-contact"><strong>GitHub:</strong> <a href="https://github.com/seedli" target="_blank">https://github.com/seedli</a></p>
-		<p class="basics-contact"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shih-hao-li-670124121/" target="_blank">https://www.linkedin.com/in/shih-hao-li-670124121/</a></p>
-        <br>
-        <hr />
-        </div>
-      </section>
-	  
-	  <section class="row">
-		<header class="col-md-3">
-          <h3 class="section-heading">About Me</h3>
-        </header>
-		<div class="col-md-9">
-          <div class="skills">
-			<p>
-				An experienced software engineer with over 14 years of Java web application development experience, having worked across diverse IT companies in Taiwan.
-				<br/>
-				A simple person, no bad habits, a little introverted, but proactive at work and learning. Love sports and video games.
-				<br/>
-				I'm looking for a new job opportunity with more challenges to grow in my career, and I will utilize my work background in my next position.
-			</p>
-		  </div>
-		  <hr />
-		</div>
-	  </section>
-	  
-      <section class="row">
-        <header class="col-md-3">
-          <h3 class="section-heading">Working Experiences</h3>
-        </header>
-        <div class="col-md-9">
-          <div class="skills">
-		    <img src="http://d9hhrg4mnvzow.cloudfront.net/info2.sunbirddcim.com/dcim-test-drive-1/38ef0047-sunbird-logor-no-tagline_104v01h04v01g000000028.png" alt="Sunbird">
-			<h3>Sunbird Software</h3>
-            <strong>Senior Software Engineer</strong>
-            <p>May 2018 - Present</p>
-            <p>Sunbird DCIM is a cloud-based IT asset management and data center infrastructure management (DCIM) solution for businesses of all sizes. It serves various industries, including healthcare, finance, industrial, technology and utilities.</p>
-            <strong>Experiences:</strong>
-			<ul>
-              <li>Sunbird DCIM solutions
-				<ul>
-					<li>Description: DCIM Monitoring enables you to monitor and report on energy usage and environmental conditions in your data center.</li>
-					<li>Solution Environment: Java, Spring, Linux, Hibernate, Jooq, Liquibase</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Co-work with engineers in the US and Taiwan to enhance the functionality of the DCIM products.</li>
-							<li>Fix bugs according to assigned ticket.</li>
-							<li>Solve issues that customers reported.</li>
-							<li>Add new features according to the requirements that system engineers developed.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-			  <br/>
-            </ul>
-            <hr />
-		  
-			<img src="https://www.gorilla-technology.com/wp-content/uploads/2024/01/Featured-Image_Gorila-Logo.png" alt="Gorilla">
-			<h3>Gorilla Technology</h3>
-            <strong>Software Engineer</strong>
-            <p>May 2017 - May 2018</p>
-            <p>Gorilla is a company that specializes in video intelligence and IoT technology, supporting a wide range of video-centric and content management applications for retail, enterprise, and surveillance.
-				<br/>My responsibilities included maintaining and developing display systems such as Survey, Advert, Signage, and Flight Schedule.</p>
-            <strong>Experiences:</strong>
-			<ul>
-              <li>Connected Advert Space System.
-				<ul>
-					<li>Description: An advertisement system that provides broadcasting services with different media types content, program layouts, and schedules.</li>
-					<li>Device-server architecture and a web-based background management system</li>
-					<li>Solution Environment: Java Servlet, Hibernate</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Maintain systems in production, and fix bugs.</li>
-							<li>Modify or add new features according to users requirements or product manager's suggestion.</li>
-							<li>Developed a new feature enabling the system to interact with e-paper — a new device type different from other display devices, communicating via socket protocol. Enabled the system to control e-papers to display uploaded pictures.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-			  <br/>
-              <li>Taoyuan Airport(TPE), Toilet Satisfaction Polling System.
-				<ul>
-					<li>Description: Devices were installed at all restrooms in TPE Airport, allowing travelers to provide satisfaction feedback on their restroom experiences, as well as notify cleaning staff of issues such as grime or malfunction.<br/> The cleaning staff would then receive the reported issue and resolve it as quickly as possible.</li>
-					<li>Device-server architecture with touch screen, mobile phone, and a web-based background management system</li>
-					<li>Solution Environment: Spring, Hibernate, Apache Tiles, Rabbit-MQ</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Maintain systems in production, and fix bugs.</li>
-							<li>Modify or add new features according to users' requirements or product manager's suggestion.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-			  <br/>
-              <li>Taipei Songshan Airport(TSA), Flight Schedule Display System.
-				<ul>
-					<li>Description: A system that helps users design the layout of flight schedules and broadcast with different media types content and program layouts.</li>
-					<li>Device-server architecture and a web-based background management system</li>
-					<li>Solution Environment: Spring, Hibernate, Apache Tiles</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Write system design documents.</li>
-							<li>Construct background system software architecture from scratch.</li>
-							<li>Build RESTFul API and WebSocket API for front-end web and display devices.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-            </ul>
-            <hr />
-			<img src="https://www.104.com.tw/upload1/logo/1104_4967550000.gif" alt="Syscom">
-            <h3>SYSCOM</h3>
-            <strong>Senior Software Engineer</strong>
-            <p>Aug 2011 - May 2017</p>
-            <p>SYSCOM is a system integration solutions provider. Most of my department&#39;s clients are government agencies.<br/>My responsibilities included maintaining and developing their systems, primarily using Java.</p>
-			<strong>Experiences:</strong>
-            <ul>
-              <li>National Police Agency, Report Case System.
-				<ul>
-					<li>Description: This system was provided to police officers to process reports from the public, e.g. missing persons, lost vehicles, and criminal cases.</li>
-					<li>With Windows form application at all the police stations as offline system, and a web-based system as online system.</li>
-					<li>Solution Environment: Struts(1.1), Hibernate 3</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Maintain systems in production, and fix bugs.</li>
-							<li>Modify or add new features according to client's requirement or case officer's suggestion.</li>
-							<li>Migrate the database and convert the source code from Big5 to UTF-8.</li>
-							<li>Add the logging mechanism, send usage records to the logging system through MSMQ.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-			  <br/>
-              <li>National Police Agency, Police Service App.
-				<ul>
-					<li>Description: This app includes many useful services provided by the National Police Agency, e.g. voice/video call 110, towing car, listening to radio.</li>
-					<li>Android app, programming with Java.</li>
-					<li>Play Store: <a href="https://play.google.com/store/apps/details?id=tw.gov.npa.callservice" target="_blank">
-						https://play.google.com/store/apps/details?id=tw.gov.npa.callservice</a>
-					</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Write the partial features of this app, e.g. Towing car search, Speedcam search(by location or area), GCM push message mechanism.</li>
-							<li>Maintain this app, fix the bugs.</li>
-							<li>Manage layouts.</li>
-							<li>Organized and integrated functionality written by other colleagues into this app.</li>
-							<li>Package and deploy the apk.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-			  <br/>
-              <li>National Police Agency, Equipment Management System.
-				<ul>
-					<li>Description: A system for police officers to manage their equipment, e.g. police cars, guns, bulletproof gears.</li>
-					<li>Web-based system.</li>
-					<li>Solution Environment: Java Servlet, JQuery</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Based on the architecture provided by a senior colleague, wrote CRUD functions as reference examples.</li>
-							<li>Write partial functions at this system.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-			  <br/>
-              <li>Intellectual Property Office, Personnel System.
-				<ul>
-					<li>Description: A system that helps users manage the payroll and personnel requirements of the organization.</li>
-					<li>Web-based system.</li>
-					<li>Solution Environment: Java Servlet, JQuery.</li>
-					<li>
-						Responsibility:
-						<ol>
-							<li>Based on the architecture provided by a senior colleague, wrote CRUD functions as reference examples.</li>
-							<li>Write partial functions at this system.</li>
-						</ol>
-					</li>
-				</ul>
-			  </li>
-            </ul>
-            <hr />
-          </div>
-        </div>
-      </section>
-
-      <section class="row">
-        <header class="col-md-3">
-          <h3 class="section-heading">Education</h3>
-        </header>
-        <div class="col-md-9">
-          <div class="skills">
-            <h3 class="education-type">Master</h3>
-            <h4 class="education-area">Manufacturing Information and Systems</h4>
-            <h4 class="institution-name">National Cheng Kung University</h4>
-            <p>2008-2010</p>
-            <ul>
-            </ul>
-            <hr />
-            <h3 class="education-type">Bachelor</h3>
-            <h4 class="education-area">Industrial Engineering</h4>
-            <h4 class="institution-name">Chung Yuan Christian University</h4>
-            <p>2003-2008</p>
-            <ul>
-            </ul>
-            <hr />
-          </div>
-        </div>
-      </section>
-
-
-      <section class="row">
-        <header class="col-md-3">
-          <h3 class="section-heading">Skills</h3>
-        </header>
-        <div class="col-md-9">
-          <div class="row-fluid skills">
-            <ul class="col-md-6">
-				<li>Programming Language: Java, SQL</li>
-				<li>Framework: Spring(MVC, Security, Data, AOP), Hibernate, Apache Tiles</li>
-				<li>Tool: Maven, Liquibase</li>
-				<li>API/Protocol: RESTful, SOAP, SNMP, WebSocket, Socket</li>
-			</ul>
-			<hr />
-          </div>
-        </div>
-      </section>
-
-      <section class="row">
-        <header class="col-md-3">
-          <h3 class="section-heading">Interests</h3>
-        </header>
-		<div class="col-md-9">
-          <div class="row-fluid skills">
-            <ul class="col-md-6">
-              <li>
-                <h4 class="skill">Sports</h4>
-                <ul>
-                  <li>Slowpitch Softball</li>
-                  <li>Bowling</li>
-                  <li>Bicycle</li>
-                </ul>
-              </li>
-			  <li>
-                <h4 class="skill">Leisure activities</h4>
-                <ul>
-                  <li>Movies</li>
-                  <li>PC Games</li>
-                  <li>Comics</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-
+<div class="page">
+  <!-- Header -->
+  <header class="header">
+    <h1>Shih-Hao (Tom) Li <span class="name-zh">李世豪</span></h1>
+    <div class="contact-row">
+      <span><a href="mailto:seedlix@gmail.com">seedlix@gmail.com</a></span>
+      <span class="sep">·</span>
+      <span><a href="https://github.com/seedli" target="_blank">github.com/seedli</a></span>
+      <span class="sep">·</span>
+      <span><a href="https://www.linkedin.com/in/shih-hao-li-670124121/" target="_blank">LinkedIn</a></span>
     </div>
-  </div>
+  </header>
+
+  <!-- About -->
+  <section class="section about">
+    <h2 class="section-title">About</h2>
+    <p>
+      An experienced software engineer with over 14 years of Java web application development experience, having worked across diverse IT companies in Taiwan. Proactive at work and continuous learning. Looking for new opportunities with greater challenges to further grow in my career.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section class="section">
+    <h2 class="section-title">Experience</h2>
+
+    <!-- Sunbird -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Senior Software Engineer</span>
+        <span class="job-date">May 2018 – Present</span>
+      </div>
+      <div class="job-company">Sunbird Software</div>
+      <p class="job-desc">
+        Sunbird DCIM is a cloud-based IT asset management and data center infrastructure management (DCIM) solution for businesses of all sizes, serving healthcare, finance, industrial, technology, and utilities industries.
+      </p>
+      <div class="project">
+        <div class="project-name">Sunbird DCIM Solutions</div>
+        <div class="project-meta">
+          <span class="tech">Java</span>
+          <span class="tech">Spring</span>
+          <span class="tech">Hibernate</span>
+          <span class="tech">Jooq</span>
+          <span class="tech">Liquibase</span>
+          <span class="tech">Linux</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Collaborated with engineers in the US and Taiwan to enhance the functionality of the DCIM products.</li>
+          <li>Fixed bugs according to assigned tickets and resolved customer-reported issues.</li>
+          <li>Added new features according to requirements developed by system engineers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Gorilla -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Software Engineer</span>
+        <span class="job-date">May 2017 – May 2018</span>
+      </div>
+      <div class="job-company">Gorilla Technology</div>
+      <p class="job-desc">
+        Gorilla is a company that specializes in video intelligence and IoT technology. My responsibilities included maintaining and developing display systems such as Survey, Advert, Signage, and Flight Schedule.
+      </p>
+
+      <div class="project">
+        <div class="project-name">Connected Advert Space System</div>
+        <div class="project-meta">
+          <span class="tech">Java Servlet</span>
+          <span class="tech">Hibernate</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Maintained systems in production and fixed bugs.</li>
+          <li>Modified or added new features according to user requirements or product manager's suggestions.</li>
+          <li>Developed a new feature enabling the system to interact with e-paper — a new device type communicating via socket protocol. Enabled the system to control e-papers to display uploaded pictures.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Taoyuan Airport (TPE), Restroom Satisfaction Polling System</div>
+        <div class="project-meta">
+          <span class="tech">Spring</span>
+          <span class="tech">Hibernate</span>
+          <span class="tech">Apache Tiles</span>
+          <span class="tech">RabbitMQ</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Maintained systems in production and fixed bugs.</li>
+          <li>Modified or added new features according to users' requirements or product manager's suggestions.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Taipei Songshan Airport (TSA), Flight Schedule Display System</div>
+        <div class="project-meta">
+          <span class="tech">Spring</span>
+          <span class="tech">Hibernate</span>
+          <span class="tech">Apache Tiles</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Wrote system design documents.</li>
+          <li>Constructed background system software architecture from scratch.</li>
+          <li>Built RESTful API and WebSocket API for front-end web and display devices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SYSCOM -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Senior Software Engineer</span>
+        <span class="job-date">Aug 2011 – May 2017</span>
+      </div>
+      <div class="job-company">SYSCOM</div>
+      <p class="job-desc">
+        SYSCOM is a system integration solutions provider. My responsibilities included maintaining and developing systems for government agency clients, primarily using Java.
+      </p>
+
+      <div class="project">
+        <div class="project-name">National Police Agency — Report Case System</div>
+        <div class="project-meta">
+          <span class="tech">Struts 1.1</span>
+          <span class="tech">Hibernate 3</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Maintained systems in production and fixed bugs.</li>
+          <li>Modified or added new features according to client's requirements.</li>
+          <li>Migrated the database and converted the source code from Big5 to UTF-8.</li>
+          <li>Added the logging mechanism, sending usage records to the logging system through MSMQ.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-name">National Police Agency — Police Service App</div>
+        <div class="project-meta">
+          <span class="tech">Android</span>
+          <span class="tech">Java</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Developed partial features of the app, e.g. towing car search, speed camera search, and GCM push message mechanism.</li>
+          <li>Maintained the app, managed layouts, and fixed bugs.</li>
+          <li>Organized and integrated functionality written by other colleagues into the app.</li>
+          <li>Packaged and deployed the APK.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-name">National Police Agency — Equipment Management System</div>
+        <div class="project-meta">
+          <span class="tech">Java Servlet</span>
+          <span class="tech">jQuery</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Based on the architecture provided by a senior colleague, wrote CRUD functions as reference examples.</li>
+          <li>Wrote partial functions for this system.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Intellectual Property Office — Personnel System</div>
+        <div class="project-meta">
+          <span class="tech">Java Servlet</span>
+          <span class="tech">jQuery</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Based on the architecture provided by a senior colleague, wrote CRUD functions as reference examples.</li>
+          <li>Wrote partial functions for this system.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-item">
+      <div>
+        <span class="edu-degree">M.S. in Manufacturing Information and Systems</span>
+        <div class="edu-school">National Cheng Kung University</div>
+      </div>
+      <span class="edu-year">2008 – 2010</span>
+    </div>
+    <div class="edu-item">
+      <div>
+        <span class="edu-degree">B.S. in Industrial Engineering</span>
+        <div class="edu-school">Chung Yuan Christian University</div>
+      </div>
+      <span class="edu-year">2003 – 2008</span>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section">
+    <h2 class="section-title">Skills</h2>
+    <dl class="skills-grid">
+      <dt>Languages</dt>
+      <dd>Java, SQL</dd>
+      <dt>Frameworks</dt>
+      <dd>Spring (MVC, Security, Data, AOP), Hibernate, Apache Tiles</dd>
+      <dt>Tools</dt>
+      <dd>Maven, Liquibase, Git</dd>
+      <dt>API / Protocol</dt>
+      <dd>RESTful, SOAP, SNMP, WebSocket, Socket</dd>
+    </dl>
+  </section>
 </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-  </body>
+<button class="print-btn" onclick="window.print()">📄 Save as PDF</button>
+
+</body>
 </html>

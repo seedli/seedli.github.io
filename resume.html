@@ -161,7 +161,8 @@
 
     .project {
       margin-bottom: 14px;
-      padding-left: 0;
+      padding-left: 14px;
+      border-left: 2px solid var(--color-border-light);
     }
 
     .project:last-child {
@@ -169,8 +170,9 @@
     }
 
     .project-name {
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
       margin-bottom: 2px;
     }
 
@@ -367,13 +369,16 @@
         <div class="project-meta">
           <span class="tech">Java</span>
           <span class="tech">Spring</span>
-		  <span class="tech">Kubernates</span>
-		  <span class="tech">Postgreql</span>
-		  <span class="tech">Docker</span>
+          <span class="tech">PostgreSQL</span>
+          <span class="tech">Docker</span>
+          <span class="tech">Kubernetes</span>
         </div>
         <ul class="responsibilities">
-          <li>Developed and maintained BSS/OSS modules for a Singapore-based telecom operator, covering mobile plan sales, broadband provisioning, and service activation workflows.</li>
-          <li>Integrated business processes across order management, billing, and service fulfillment systems.</li>
+          <li>Developed and maintained BSS/OSS modules across the full business lifecycle for a Singapore-based telecom operator, covering mobile plan sales, broadband subscription, service provisioning, and activation workflows.</li>
+          <li>Worked across multiple business domains including order management, billing integration, and service fulfillment, gaining broad exposure to the end-to-end telecom BSS/OSS architecture.</li>
+          <li>Contributed to the platform's workflow processing engine, working with request-scoped caching mechanisms and Spring transaction management to ensure data consistency across complex business processes.</li>
+          <li>Operated in a containerized microservices environment deployed on Kubernetes, with PostgreSQL as the primary data store.</li>
+          <li>Served as a technical interviewer, evaluating candidates' Java and system design skills to support team growth and hiring quality.</li>
         </ul>
       </div>
     </div>
@@ -386,22 +391,25 @@
       </div>
       <div class="job-company">Sunbird Software</div>
       <p class="job-desc">
-        Sunbird DCIM is a cloud-based IT asset management and data center infrastructure management (DCIM) solution for businesses of all sizes, serving healthcare, finance, industrial, technology, and utilities industries.
+        Sunbird is a data center infrastructure management (DCIM) software vendor. Its products enable enterprises to monitor energy usage, environmental conditions, and IT assets across data centers in real time.
       </p>
       <div class="project">
-        <div class="project-name">Sunbird DCIM Solutions</div>
+        <div class="project-name">Sunbird DCIM Platform</div>
         <div class="project-meta">
           <span class="tech">Java</span>
           <span class="tech">Spring</span>
           <span class="tech">Hibernate</span>
           <span class="tech">Jooq</span>
           <span class="tech">Liquibase</span>
+          <span class="tech">SNMP</span>
           <span class="tech">Linux</span>
         </div>
         <ul class="responsibilities">
-          <li>Collaborated with engineers in the US and Taiwan to enhance the functionality of the DCIM products.</li>
-          <li>Fixed bugs according to assigned tickets and resolved customer-reported issues.</li>
-          <li>Added new features according to requirements developed by system engineers.</li>
+          <li>Worked across multiple product modules over 4 years, delivering features and resolving cross-module issues in a large-scale enterprise DCIM platform.</li>
+          <li>Implemented and maintained SNMP-based device monitoring integrations, enabling real-time data collection from data center infrastructure equipment.</li>
+          <li>Authored and managed database schema migrations using Liquibase to support evolving product requirements across releases.</li>
+          <li>Optimized data access and reporting queries with Jooq, improving query performance for large-volume asset and monitoring datasets.</li>
+          <li>Participated in Agile ceremonies (sprint planning, standups) and conducted code reviews in English with a distributed US–Taiwan engineering team.</li>
         </ul>
       </div>
     </div>
@@ -414,24 +422,38 @@
       </div>
       <div class="job-company">Gorilla Technology</div>
       <p class="job-desc">
-        Gorilla is a company that specializes in video intelligence and IoT technology. My responsibilities included maintaining and developing display systems such as Survey, Advert, Signage, and Flight Schedule.
+        Gorilla Technology is a publicly listed company specializing in video intelligence and IoT solutions for smart city and transportation applications. Developed and maintained multiple display and IoT systems deployed at major Taiwan airports.
       </p>
+
+      <div class="project">
+        <div class="project-name">Taipei Songshan Airport (TSA) — Flight Schedule Display System</div>
+        <div class="project-meta">
+          <span class="tech">Spring</span>
+          <span class="tech">Hibernate</span>
+          <span class="tech">Apache Tiles</span>
+          <span class="tech">WebSocket</span>
+        </div>
+        <ul class="responsibilities">
+          <li>Co-designed the backend architecture from scratch with a senior colleague, authoring system design documents that defined the overall technical direction.</li>
+          <li>Built RESTful APIs for front-end web management and WebSocket APIs for real-time flight data push to airport display devices.</li>
+        </ul>
+      </div>
 
       <div class="project">
         <div class="project-name">Connected Advert Space System</div>
         <div class="project-meta">
           <span class="tech">Java Servlet</span>
           <span class="tech">Hibernate</span>
+          <span class="tech">Socket</span>
         </div>
         <ul class="responsibilities">
-          <li>Maintained systems in production and fixed bugs.</li>
-          <li>Modified or added new features according to user requirements or product manager's suggestions.</li>
-          <li>Developed a new feature enabling the system to interact with e-paper — a new device type communicating via socket protocol. Enabled the system to control e-papers to display uploaded pictures.</li>
+          <li>Implemented IoT device integration for e-paper displays — a new device type that communicates via low-level socket protocol, enabling the system to remotely control e-papers to render uploaded content.</li>
+          <li>Delivered new features and resolved production issues based on product manager and user feedback.</li>
         </ul>
       </div>
 
       <div class="project">
-        <div class="project-name">Taoyuan Airport (TPE), Restroom Satisfaction Polling System</div>
+        <div class="project-name">Taoyuan Airport (TPE) — Restroom Satisfaction Polling System</div>
         <div class="project-meta">
           <span class="tech">Spring</span>
           <span class="tech">Hibernate</span>
@@ -439,22 +461,7 @@
           <span class="tech">RabbitMQ</span>
         </div>
         <ul class="responsibilities">
-          <li>Maintained systems in production and fixed bugs.</li>
-          <li>Modified or added new features according to users' requirements or product manager's suggestions.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <div class="project-name">Taipei Songshan Airport (TSA), Flight Schedule Display System</div>
-        <div class="project-meta">
-          <span class="tech">Spring</span>
-          <span class="tech">Hibernate</span>
-          <span class="tech">Apache Tiles</span>
-        </div>
-        <ul class="responsibilities">
-          <li>Wrote system design documents.</li>
-          <li>Constructed background system software architecture from scratch.</li>
-          <li>Built RESTful API and WebSocket API for front-end web and display devices.</li>
+          <li>Maintained and enhanced a passenger satisfaction polling system deployed across Taoyuan International Airport restrooms, using RabbitMQ to asynchronously collect voting results from tablet devices.</li>
         </ul>
       </div>
     </div>
@@ -467,7 +474,7 @@
       </div>
       <div class="job-company">SYSCOM</div>
       <p class="job-desc">
-        SYSCOM is a system integration solutions provider. My responsibilities included maintaining and developing systems for government agency clients, primarily using Java.
+        SYSCOM is a leading system integration solutions provider in Taiwan. Delivered and maintained mission-critical Java systems for government agencies including the National Police Agency and the Intellectual Property Office.
       </p>
 
       <div class="project">
@@ -475,12 +482,12 @@
         <div class="project-meta">
           <span class="tech">Struts 1.1</span>
           <span class="tech">Hibernate 3</span>
+          <span class="tech">MSMQ</span>
         </div>
         <ul class="responsibilities">
-          <li>Maintained systems in production and fixed bugs.</li>
-          <li>Modified or added new features according to client's requirements.</li>
-          <li>Migrated the database and converted the source code from Big5 to UTF-8.</li>
-          <li>Added the logging mechanism, sending usage records to the logging system through MSMQ.</li>
+          <li>Led a full-system character encoding migration from Big5 to UTF-8, covering the database, source code, and all related modules to support internationalization.</li>
+          <li>Designed and implemented a centralized logging mechanism that sends usage records to the logging system via MSMQ, improving system auditability.</li>
+          <li>Delivered new features and resolved production issues based on client requirements.</li>
         </ul>
       </div>
 
@@ -489,36 +496,22 @@
         <div class="project-meta">
           <span class="tech">Android</span>
           <span class="tech">Java</span>
+          <span class="tech">GCM</span>
         </div>
         <ul class="responsibilities">
-          <li>Developed partial features of the app, e.g. towing car search, speed camera search, and GCM push message mechanism.</li>
-          <li>Maintained the app, managed layouts, and fixed bugs.</li>
-          <li>Organized and integrated functionality written by other colleagues into the app.</li>
-          <li>Packaged and deployed the APK.</li>
+          <li>Developed core features for a public-facing Android app with over 500,000 downloads, including towing vehicle search, speed camera lookup, and push notification system via GCM.</li>
+          <li>Coordinated integration of modules developed by multiple team members into a unified release, managing build packaging and deployment.</li>
         </ul>
       </div>
 
       <div class="project">
-        <div class="project-name">National Police Agency — Equipment Management System</div>
+        <div class="project-name">Equipment Management & Personnel Systems</div>
         <div class="project-meta">
           <span class="tech">Java Servlet</span>
           <span class="tech">jQuery</span>
         </div>
         <ul class="responsibilities">
-          <li>Based on the architecture provided by a senior colleague, wrote CRUD functions as reference examples.</li>
-          <li>Wrote partial functions for this system.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <div class="project-name">Intellectual Property Office — Personnel System</div>
-        <div class="project-meta">
-          <span class="tech">Java Servlet</span>
-          <span class="tech">jQuery</span>
-        </div>
-        <ul class="responsibilities">
-          <li>Based on the architecture provided by a senior colleague, wrote CRUD functions as reference examples.</li>
-          <li>Wrote partial functions for this system.</li>
+          <li>Built foundational CRUD modules and reference implementations for the National Police Agency Equipment Management System and the Intellectual Property Office Personnel System.</li>
         </ul>
       </div>
     </div>
@@ -552,7 +545,9 @@
       <dt>Frameworks</dt>
       <dd>Spring (MVC, Security, Data, AOP), Hibernate, Apache Tiles</dd>
       <dt>Tools</dt>
-      <dd>Maven, Liquibase, Git</dd>
+      <dd>Maven, Liquibase, Git, Docker, Kubernetes</dd>
+      <dt>Databases</dt>
+      <dd>PostgreSQL</dd>
       <dt>API / Protocol</dt>
       <dd>RESTful, SOAP, SNMP, WebSocket, Socket</dd>
     </dl>

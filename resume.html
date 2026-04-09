@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shih-Hao (Tom) Li — Resume</title>
+  <meta property="og:title" content="Shih-Hao (Tom) Li — Resume">
+  <meta property="og:description" content="Java backend engineer with 14+ years of experience in telecom BSS/OSS, DCIM, IoT, and government systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seedli.github.io/resume.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
@@ -20,271 +25,45 @@
       --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-serif: 'IBM Plex Serif', Georgia, serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      font-size: 15px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      color: var(--color-text);
-      line-height: 1.6;
-      background: var(--color-bg-page);
-      padding: 32px 16px;
-    }
-
-    .page {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--color-bg);
-      padding: 56px 64px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06);
-      border-radius: 2px;
-    }
-
-    /* ─── Header ─── */
-    .header {
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 2px solid var(--color-text);
-    }
-
-    .header h1 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
-
-    .header h1 .name-zh {
-      font-size: 1.4rem;
-      color: var(--color-text-secondary);
-      margin-left: 8px;
-      font-weight: 400;
-    }
-
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 20px;
-      margin-top: 10px;
-      font-size: 0.87rem;
-      color: var(--color-text-secondary);
-    }
-
-    .contact-row a {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-
-    .contact-row a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-row .sep {
-      color: var(--color-border);
-    }
-
-    /* ─── Sections ─── */
-    .section {
-      margin-bottom: 28px;
-    }
-
-    .section-title {
-      font-family: var(--font-sans);
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-accent);
-      border-bottom: 1px solid var(--color-border-light);
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-    }
-
-    /* ─── About ─── */
-    .about p {
-      color: var(--color-text-secondary);
-      font-size: 0.93rem;
-      line-height: 1.7;
-    }
-
-    /* ─── Experience ─── */
-    .job {
-      margin-bottom: 24px;
-    }
-
-    .job:last-child {
-      margin-bottom: 0;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-bottom: 2px;
-    }
-
-    .job-title {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .job-date {
-      font-size: 0.85rem;
-      color: var(--color-text-light);
-      white-space: nowrap;
-    }
-
-    .job-company {
-      font-family: var(--font-serif);
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--color-accent);
-      margin-bottom: 6px;
-    }
-
-    .job-desc {
-      font-size: 0.87rem;
-      color: var(--color-text-secondary);
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
-
-    .project {
-      margin-bottom: 14px;
-      padding-left: 14px;
-      border-left: 2px solid var(--color-border-light);
-    }
-
-    .project:last-child {
-      margin-bottom: 0;
-    }
-
-    .project-name {
-      font-weight: 500;
-      font-size: 0.88rem;
-      color: var(--color-text-secondary);
-      margin-bottom: 2px;
-    }
-
-    .project-meta {
-      font-size: 0.82rem;
-      color: var(--color-text-light);
-      margin-bottom: 4px;
-    }
-
-    .project-meta .tech {
-      background: #f3f4f6;
-      padding: 1px 7px;
-      border-radius: 3px;
-      font-size: 0.78rem;
-      color: var(--color-text-secondary);
-      display: inline-block;
-      margin: 1px 2px 1px 0;
-    }
-
-    .responsibilities {
-      list-style: none;
-      padding: 0;
-    }
-
-    .responsibilities li {
-      font-size: 0.87rem;
-      color: var(--color-text-secondary);
-      line-height: 1.6;
-      padding-left: 16px;
-      position: relative;
-      margin-bottom: 3px;
-    }
-
-    .responsibilities li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: var(--color-border);
-    }
-
-    /* ─── Education ─── */
-    .edu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-bottom: 8px;
-    }
-
-    .edu-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .edu-degree {
-      font-weight: 600;
-      font-size: 0.93rem;
-    }
-
-    .edu-school {
-      font-size: 0.87rem;
-      color: var(--color-text-secondary);
-    }
-
-    .edu-year {
-      font-size: 0.85rem;
-      color: var(--color-text-light);
-      white-space: nowrap;
-    }
-
-    /* ─── Skills ─── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 6px 16px;
-      font-size: 0.87rem;
-    }
-
-    .skills-grid dt {
-      color: var(--color-text-light);
-      font-weight: 500;
-      text-align: right;
-    }
-
-    .skills-grid dd {
-      color: var(--color-text-secondary);
-    }
-
-    /* ─── Print Button ─── */
-    .print-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--color-accent);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(37,99,235,0.3);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-
-    .print-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(37,99,235,0.35);
-    }
-
-    /* ─── Responsive ─── */
+    html { font-size: 15px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: var(--font-sans); color: var(--color-text); line-height: 1.6; background: var(--color-bg-page); padding: 32px 16px; }
+    .page { max-width: 800px; margin: 0 auto; background: var(--color-bg); padding: 56px 64px; box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06); border-radius: 2px; }
+    .header { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid var(--color-text); }
+    .header h1 { font-family: var(--font-serif); font-size: 2rem; font-weight: 500; letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 4px; }
+    .header h1 .name-zh { font-size: 1.4rem; color: var(--color-text-secondary); margin-left: 8px; font-weight: 400; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 10px; font-size: 0.87rem; color: var(--color-text-secondary); }
+    .contact-row a { color: var(--color-accent); text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+    .contact-row .sep { color: var(--color-border); }
+    .section { margin-bottom: 28px; }
+    .section-title { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-accent); border-bottom: 1px solid var(--color-border-light); padding-bottom: 6px; margin-bottom: 16px; }
+    .about p { color: var(--color-text-secondary); font-size: 0.93rem; line-height: 1.7; }
+    .job { margin-bottom: 24px; }
+    .job:last-child { margin-bottom: 0; }
+    .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; margin-bottom: 2px; }
+    .job-title { font-weight: 600; font-size: 1rem; }
+    .job-date { font-size: 0.85rem; color: var(--color-text-light); white-space: nowrap; }
+    .job-company { font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--color-accent); margin-bottom: 6px; }
+    .job-desc { font-size: 0.87rem; color: var(--color-text-secondary); margin-bottom: 8px; line-height: 1.6; }
+    .project { margin-bottom: 14px; padding-left: 14px; border-left: 2px solid var(--color-border-light); }
+    .project:last-child { margin-bottom: 0; }
+    .project-name { font-weight: 500; font-size: 0.88rem; color: var(--color-text-secondary); margin-bottom: 2px; }
+    .project-meta { font-size: 0.82rem; color: var(--color-text-light); margin-bottom: 4px; }
+    .project-meta .tech { background: #f3f4f6; padding: 1px 7px; border-radius: 3px; font-size: 0.78rem; color: var(--color-text-secondary); display: inline-block; margin: 1px 2px 1px 0; }
+    .responsibilities { list-style: none; padding: 0; }
+    .responsibilities li { font-size: 0.87rem; color: var(--color-text-secondary); line-height: 1.6; padding-left: 16px; position: relative; margin-bottom: 3px; }
+    .responsibilities li::before { content: "–"; position: absolute; left: 0; color: var(--color-border); }
+    .edu-item { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree { font-weight: 600; font-size: 0.93rem; }
+    .edu-school { font-size: 0.87rem; color: var(--color-text-secondary); }
+    .edu-year { font-size: 0.85rem; color: var(--color-text-light); white-space: nowrap; }
+    .skills-grid { display: grid; grid-template-columns: 140px 1fr; gap: 6px 16px; font-size: 0.87rem; }
+    .skills-grid dt { color: var(--color-text-light); font-weight: 500; text-align: right; }
+    .skills-grid dd { color: var(--color-text-secondary); }
+    .print-btn { position: fixed; bottom: 24px; right: 24px; background: var(--color-accent); color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; cursor: pointer; box-shadow: 0 2px 8px rgba(37,99,235,0.3); transition: transform 0.15s, box-shadow 0.15s; }
+    .print-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,0.35); }
     @media (max-width: 640px) {
       body { padding: 0; }
       .page { padding: 32px 24px; border-radius: 0; box-shadow: none; }
@@ -297,43 +76,37 @@
       .contact-row { flex-direction: column; gap: 2px; }
       .contact-row .sep { display: none; }
     }
-
-    /* ─── Print ─── */
     @media print {
-      html { font-size: 12.5px; }
-      body { background: #fff; padding: 0; }
-      .page {
-        max-width: 100%;
-        padding: 0;
-        box-shadow: none;
-        border-radius: 0;
-      }
+      html { font-size: 12px; }
+      body { background: #fff; padding: 0; line-height: 1.5; }
+      .page { max-width: 100%; padding: 0; box-shadow: none; border-radius: 0; }
       .print-btn { display: none; }
-      .section { margin-bottom: 20px; }
-      .job { margin-bottom: 18px; }
-      .header { margin-bottom: 24px; padding-bottom: 18px; }
+      .header { margin-bottom: 20px; padding-bottom: 14px; }
+      .header h1 { font-size: 1.8rem; }
+      .section { margin-bottom: 16px; }
+      .section-title { margin-bottom: 12px; padding-bottom: 5px; }
+      .about p { line-height: 1.55; }
+      .job { margin-bottom: 14px; }
+      .job-desc { margin-bottom: 6px; line-height: 1.5; }
+      .project { margin-bottom: 10px; padding-left: 12px; }
+      .responsibilities li { margin-bottom: 2px; line-height: 1.5; }
+      .edu-item { margin-bottom: 6px; }
+      .skills-grid { gap: 4px 14px; }
       a { color: var(--color-text-secondary) !important; }
       .section-title { color: var(--color-text) !important; }
-      .project-meta .tech {
-        background: none;
-        padding: 0;
-        border: 1px solid var(--color-border);
-      }
-
-      @page {
-        margin: 16mm 14mm;
-        size: A4;
-      }
+      .project-meta .tech { background: none; padding: 0; border: 1px solid var(--color-border); }
+      @page { margin: 14mm 14mm; size: A4; }
     }
   </style>
 </head>
 <body>
 
 <div class="page">
-  <!-- Header -->
   <header class="header">
     <h1>Shih-Hao (Tom) Li <span class="name-zh">李世豪</span></h1>
     <div class="contact-row">
+      <span>Taipei, Taiwan</span>
+      <span class="sep">·</span>
       <span><a href="mailto:seedlix@gmail.com">seedlix@gmail.com</a></span>
       <span class="sep">·</span>
       <span><a href="https://github.com/seedli" target="_blank">github.com/seedli</a></span>
@@ -342,19 +115,16 @@
     </div>
   </header>
 
-  <!-- About -->
   <section class="section about">
     <h2 class="section-title">About</h2>
     <p>
-      An experienced software engineer with over 14 years of Java web application development experience, having worked across diverse IT companies in Taiwan. Proactive at work and continuous learning. Looking for new opportunities with greater challenges to further grow in my career.
+      Java backend engineer with 14+ years of experience building enterprise-grade systems across telecom BSS/OSS, data center infrastructure management (DCIM), IoT, and government sectors. Currently developing cloud-native microservices on Kubernetes for a Singapore telecom operator. Experienced in distributed team collaboration with English-speaking engineering teams. Comfortable working across the full stack from Spring-based backend services and workflow engines to database optimization and DevOps tooling.
     </p>
   </section>
 
-  <!-- Experience -->
   <section class="section">
     <h2 class="section-title">Experience</h2>
 
-    <!-- CompaxDigital -->
     <div class="job">
       <div class="job-header">
         <span class="job-title">Software Developer</span>
@@ -383,7 +153,6 @@
       </div>
     </div>
 
-    <!-- Sunbird -->
     <div class="job">
       <div class="job-header">
         <span class="job-title">Senior Software Engineer</span>
@@ -414,7 +183,6 @@
       </div>
     </div>
 
-    <!-- Gorilla -->
     <div class="job">
       <div class="job-header">
         <span class="job-title">Software Engineer</span>
@@ -424,7 +192,6 @@
       <p class="job-desc">
         Gorilla Technology is a publicly listed company specializing in video intelligence and IoT solutions for smart city and transportation applications. Developed and maintained multiple display and IoT systems deployed at major Taiwan airports.
       </p>
-
       <div class="project">
         <div class="project-name">Taipei Songshan Airport (TSA) — Flight Schedule Display System</div>
         <div class="project-meta">
@@ -438,7 +205,6 @@
           <li>Built RESTful APIs for front-end web management and WebSocket APIs for real-time flight data push to airport display devices.</li>
         </ul>
       </div>
-
       <div class="project">
         <div class="project-name">Connected Advert Space System</div>
         <div class="project-meta">
@@ -451,7 +217,6 @@
           <li>Delivered new features and resolved production issues based on product manager and user feedback.</li>
         </ul>
       </div>
-
       <div class="project">
         <div class="project-name">Taoyuan Airport (TPE) — Restroom Satisfaction Polling System</div>
         <div class="project-meta">
@@ -466,7 +231,6 @@
       </div>
     </div>
 
-    <!-- SYSCOM -->
     <div class="job">
       <div class="job-header">
         <span class="job-title">Senior Software Engineer</span>
@@ -476,7 +240,6 @@
       <p class="job-desc">
         SYSCOM is a leading system integration solutions provider in Taiwan. Delivered and maintained mission-critical Java systems for government agencies including the National Police Agency and the Intellectual Property Office.
       </p>
-
       <div class="project">
         <div class="project-name">National Police Agency — Report Case System</div>
         <div class="project-meta">
@@ -490,7 +253,6 @@
           <li>Delivered new features and resolved production issues based on client requirements.</li>
         </ul>
       </div>
-
       <div class="project">
         <div class="project-name">National Police Agency — Police Service App</div>
         <div class="project-meta">
@@ -503,7 +265,6 @@
           <li>Coordinated integration of modules developed by multiple team members into a unified release, managing build packaging and deployment.</li>
         </ul>
       </div>
-
       <div class="project">
         <div class="project-name">Equipment Management & Personnel Systems</div>
         <div class="project-meta">
@@ -517,7 +278,6 @@
     </div>
   </section>
 
-  <!-- Education -->
   <section class="section">
     <h2 class="section-title">Education</h2>
     <div class="edu-item">
@@ -536,20 +296,25 @@
     </div>
   </section>
 
-  <!-- Skills -->
   <section class="section">
     <h2 class="section-title">Skills</h2>
     <dl class="skills-grid">
-      <dt>Languages</dt>
-      <dd>Java, SQL</dd>
+      <dt>Programming</dt>
+      <dd>Java, SQL, JavaScript</dd>
       <dt>Frameworks</dt>
-      <dd>Spring (MVC, Security, Data, AOP), Hibernate, Apache Tiles</dd>
-      <dt>Tools</dt>
-      <dd>Maven, Liquibase, Git, Docker, Kubernetes</dd>
+      <dd>Spring (MVC, Security, Data, AOP), Hibernate, Jooq, Apache Tiles</dd>
       <dt>Databases</dt>
-      <dd>PostgreSQL</dd>
+      <dd>PostgreSQL, Oracle, MySQL</dd>
+      <dt>Messaging</dt>
+      <dd>RabbitMQ, MSMQ</dd>
+      <dt>DevOps</dt>
+      <dd>Docker, Kubernetes, Maven, Liquibase, Git</dd>
       <dt>API / Protocol</dt>
       <dd>RESTful, SOAP, SNMP, WebSocket, Socket</dd>
+      <dt>Methodology</dt>
+      <dd>Agile / Scrum, Code Review</dd>
+      <dt>Spoken</dt>
+      <dd>Chinese (native), English (professional working)</dd>
     </dl>
   </section>
 </div>
